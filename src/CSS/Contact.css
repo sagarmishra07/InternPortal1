@@ -1,0 +1,96 @@
+.contact-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fafbfd;
+}
+.contact-container {
+    width: 80%;
+    display: flex;
+    /* justify-content: center; */
+    margin: auto;
+    padding-top: 20px;
+}
+.contact-content-section {
+    /* display: flex ;
+    justify-content: center; */
+
+    float: left;
+    width: 55%;
+}
+.contact-image-section {
+    float: right;
+    width: 40%;
+}
+.contact-image-section img {
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+}
+.contact-content-section .contact-title {
+    /* text-transform: capitalize; */
+    font-size: 21px;
+    width: 400px;
+    height: 144px;
+    color: #414957;
+    margin-top: 80px;
+}
+.contact-content-section .contact-content {
+    margin-top: 30px;
+}
+.contact-content-section .contact-content .contact-email {
+    width: 50%;
+    float: right;
+    line-height: 2.5;
+}
+.contact-content-section .contact-content .contact-address {
+    width: 50;
+    /* float: left; */
+}
+.contact-content-section .contact-content .contact-address h1 {
+    font-family: Poppins;
+    font-style: normal;
+    width: 450px;
+    font-size: 29px;
+    color: rgba(65, 73, 87, 0.6);
+}
+.contact-content-section .contact-content .contact-address p {
+    font-family: Poppins;
+    font-size: 19px;
+    line-height: 36px;
+    width: 450px;
+    /* color: rgba(14, 13, 13, 0.6); */
+    color: #414957;
+}
+.contact-content-section .contact-content .contact-email h1 {
+    position: static;
+    width: 245px;
+    height: 60px;
+    left: 0px;
+    top: 80px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 29px;
+    line-height: 55px;
+    color: #144065;
+}
+.contact-content-section .contact-social {
+    margin-top: 110px;
+    color: rgba(65, 73, 87, 0.6);
+    font-family: Poppins;
+    width: 125px;
+    height: 50px;
+    font-size: 17px;
+}
+
+/* @media screen and (max-width: 768px){
+    
+    .container{
+        
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding-top: 50px;
+    }
+} */

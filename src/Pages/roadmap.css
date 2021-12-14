@@ -1,0 +1,17 @@
+.roadmap {
+    width: 70%;
+    background-color: FAFBFD;
+    display: flex;
+    align-items: center;
+}
+.roadmap .roadcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Roadmapss {
+    margin-top: -20px;
+    margin: -100;
+}

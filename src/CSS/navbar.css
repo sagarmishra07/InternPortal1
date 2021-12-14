@@ -1,0 +1,10 @@
+.navbar {
+    font-size: 24px;
+    display: flex;
+    justify-content: start;
+    padding: 1%;
+    background-color: cadetblue;
+}
+.navbar .abs {
+    padding-right: 2%;
+}

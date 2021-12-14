@@ -1,0 +1,102 @@
+.login-page-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f3f4;
+}
+.login-page-container .sigin-in-container {
+    display: flex;
+    background-color: #ffffff;
+    box-shadow: -4px -4px 5px rgba(0, 0, 0, 0.25),
+        4px 4px 5px rgba(0, 0, 0, 0.25);
+    font-family: "Poppins", sans-serif;
+}
+.sign-in-img {
+    height: 400px;
+    width: 400px;
+    background-color: #6bd5f0;
+}
+.sign-in-form {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+.sign-in-form div {
+    margin-top: 20px;
+    padding-left: 45px;
+    padding-right: 100px;
+    margin-bottom: 20px;
+}
+.sign-in-form div p {
+    font-size: 12px;
+    width: 208px;
+    font-weight: bold;
+    color: #00000066;
+}
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sign-in-heading {
+    font-weight: bold;
+    color: #2c2a40;
+    font-size: 24px;
+}
+.sign-in-form input[type="text"],
+input[type="password"] {
+    font-family: "Poppins", sans-serif;
+    width: 250px;
+    height: 30px;
+    size: 12px;
+    background: rgba(196, 196, 196, 0.2);
+    margin-bottom: 10px;
+    border: none;
+    padding: 5px 0px 5px 15px;
+    outline: none;
+}
+.sign-in-form button {
+    font-family: "Poppins", sans-serif;
+    width: 87px;
+    height: 39px;
+    color: white;
+    font-weight: bolder;
+    background: #144065;
+    border: solid 2px #144065;
+    border-radius: 0px 10px 10px 10px;
+    transition: 0.3s ease-in-out;
+}
+.sign-in-form button:hover {
+    color: #144065;
+    background: white;
+}
+.chk-random {
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #00000066;
+}
+.chk-random input[type="checkbox"] {
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+.chk-random a {
+    margin-left: 48px;
+}
+.a-register-here {
+    position: relative;
+    left: 20px;
+}
+@media only screen and (max-width: 600px) {
+    .page-container .sigin-in-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
