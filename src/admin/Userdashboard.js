@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { isLoaded } from "react-redux-firebase";
 import TimeAgo from "javascript-time-ago";
 import ReactTimeAgo from "react-time-ago";
-
+import { toast } from "react-toastify";
 import en from "javascript-time-ago/locale/en.json";
 import CVrequest from "./CVrequest";
 
@@ -39,19 +39,6 @@ function Userdashboard() {
     //       post: "",
     //     },
     //   });
-
-    function alertTimeout(mymsg, mymsecs) {
-        var myelement = document.createElement("div");
-        myelement.setAttribute(
-            "style",
-            "background-color: whitesmoke; width: 100px;height: 30px;position: absolute;top:0;bottom:0;left:0;right:0;margin:auto; solid black;font-family:arial;font-size:18px;font-weight:bold;display: flex; align-items: center; justify-content:center; text-align: center;"
-        );
-        myelement.innerHTML = mymsg;
-        setTimeout(function () {
-            myelement.parentNode.removeChild(myelement);
-        }, mymsecs);
-        document.body.appendChild(myelement);
-    }
 
     useEffect(() => {
         if (!user) return history.replace("/");
@@ -90,7 +77,7 @@ function Userdashboard() {
                     },
                     { merge: true }
                 )
-                .then(() => alertTimeout("<br>POST CREATED", 1000))
+                .then(() => toast.info(`Post for ${title} ${job_type} Created`))
 
                 .catch((err) => console.log(err.message()));
         } catch (error) {}
@@ -106,7 +93,9 @@ function Userdashboard() {
                     post101: firestore.FieldValue.arrayRemove(post),
                 })
                 .then(() => {
-                    alertTimeout("<br>POST Deleted", 1000);
+                    toast.error(
+                        `Post for ${post.title} ${post.job_type} Deleted`
+                    );
                 })
 
                 .catch((err) => console.log(err.message()));

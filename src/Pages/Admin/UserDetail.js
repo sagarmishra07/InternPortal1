@@ -5,7 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { useFirestore } from "react-redux-firebase";
 import { useEffect } from "react";
 import Loading from "../../components/navbar/Loading";
-
+import { toast } from "react-toastify";
 function UserDetail() {
     const [user, setUser] = useState(null);
     const { id } = useParams();
@@ -48,7 +48,7 @@ function UserDetail() {
                 .update({
                     post101: firestore.FieldValue.arrayRemove(post),
                 })
-                .then(() => {})
+                .then(() => toast.error("Post Deleted"))
 
                 .catch((err) => console.log(err.message()));
         } catch (error) {}

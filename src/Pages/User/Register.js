@@ -4,7 +4,7 @@ import { auth, db, app } from "../../firebase";
 import Navbar from "../../components/navbar/Navbar";
 import { Link, useHistory } from "react-router-dom";
 import "./Register.css";
-
+import { toast } from "react-toastify";
 function Register() {
     const [fileUrl, setFileUrl] = useState();
     const history = useHistory();
@@ -47,7 +47,7 @@ function Register() {
                 isAdmin: "false",
                 isVerified: "false",
             })
-            .then(() => alert("User Created"));
+            .then(() => toast.error("User Created"));
 
         return history.push("/login");
     };

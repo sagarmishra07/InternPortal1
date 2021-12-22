@@ -4,6 +4,7 @@ import { useFirestore } from "react-redux-firebase";
 import { Link } from "react-router-dom";
 import Loading from "../../components/navbar/Loading";
 import "../../CSS/Userdashboard.css";
+import { toast } from "react-toastify";
 function EditForm() {
     const firestore = useFirestore();
 
@@ -55,20 +56,24 @@ function EditForm() {
         if (id) {
             // update user
             try {
-                await docRef.update({
-                    ...user,
-                    updatedAt: firestore.FieldValue.serverTimestamp(),
-                });
-                console.log("Document successfully updated!");
+                await docRef
+                    .update({
+                        ...user,
+                        updatedAt: firestore.FieldValue.serverTimestamp(),
+                    })
+                    .then(() => toast.success("Details Updated"));
             } catch (error) {
                 console.error("Error updating document: ", error);
             }
         } else {
             // add new user
-            firestore.collection("users").add({
-                ...user,
-                createdAt: firestore.FieldValue.serverTimestamp(),
-            });
+            firestore
+                .collection("users")
+                .add({
+                    ...user,
+                    createdAt: firestore.FieldValue.serverTimestamp(),
+                })
+                .then(() => toast.success("New User Created"));
         }
         history.push("/dashboard");
     };

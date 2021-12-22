@@ -14,6 +14,8 @@ import userEdit from "./Pages/Admin/userEdit";
 import About from "./Pages/About";
 import JobDetail from "./Pages/JobDetail";
 import Contact from "./Pages/Contact";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 function App() {
     const Error = () => {
         return (
@@ -24,6 +26,7 @@ function App() {
     };
     return (
         <div className="app">
+            <ToastContainer />
             <Router>
                 <Switch>
                     <Route exact path="/" component={Homepage} />

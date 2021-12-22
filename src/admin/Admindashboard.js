@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../CSS/Admindashboard.css";
 import { db, app, logout } from "../firebase";
-
+import { toast } from "react-toastify";
 import { useFirestoreConnect, useFirestore } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 
@@ -28,7 +28,11 @@ const Admindashboard = ({ name, image }) => {
     const deleteUser = async (id) => {
         // alert("ID HERE : " + id);
         try {
-            await firestore.collection("users").doc(id).delete();
+            await firestore
+                .collection("users")
+                .doc(id)
+                .delete()
+                .then(() => toast.error("User Deleted"));
         } catch (error) {
             console.error("Error removing document: ", error);
         }
@@ -48,10 +52,14 @@ const Admindashboard = ({ name, image }) => {
         if (!title || !fileUrl) {
             return;
         }
-        await db.collection("roadmaps").doc().set({
-            image: fileUrl,
-            title: title,
-        });
+        await db
+            .collection("roadmaps")
+            .doc()
+            .set({
+                image: fileUrl,
+                title: title,
+            })
+            .then(() => toast.info("Roadmap Published"));
     };
 
     return (

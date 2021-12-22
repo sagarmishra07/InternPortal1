@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { saveAs } from "file-saver";
 import { Button } from "react-bootstrap";
-
+import { toast } from "react-toastify";
 const CVrequest = ({ user }) => {
     const [request, setRequest] = useState([]);
 
@@ -33,7 +33,8 @@ const CVrequest = ({ user }) => {
 
             .collection("request")
             .doc(requestid)
-            .delete();
+            .delete()
+            .then(() => toast.error(` Request Deleted`));
     };
     const downloadImage = (cv) => {
         saveAs(cv, "image.jpg"); // Put your image url here.

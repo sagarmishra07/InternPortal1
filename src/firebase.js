@@ -1,4 +1,5 @@
 import firebase from "firebase";
+import { toast } from "react-toastify";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDG8v1_2ZXigOFkwxLv_ra9Z9iNuKdCM1g",
@@ -16,7 +17,7 @@ const auth = app.auth();
 const db = app.firestore();
 
 export const logout = () => {
-    auth.signOut();
+    auth.signOut().then(() => toast.info("Logged Out"));
 };
 
 export { app, auth, db };

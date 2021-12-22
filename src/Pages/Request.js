@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { app, db } from "../firebase";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 const Request = ({ users, post }) => {
     const [fileUrl, setFileUrl] = useState();
     const history = useHistory();
@@ -15,7 +17,7 @@ const Request = ({ users, post }) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        if (!fileUrl) return;
+        if (!fileUrl) return toast.error("Select your CV before submit");
         await db
             .collection("users")
             .doc(users.uid)
@@ -26,7 +28,7 @@ const Request = ({ users, post }) => {
                 title: post.title,
                 job_type: post.job_type,
             })
-            .then(() => alert("CV Uploaded "));
+            .then(() => toast.info("CV Uploaded"));
         return history.push("/");
     };
     return (
@@ -37,7 +39,6 @@ const Request = ({ users, post }) => {
                 className="register__textBox"
                 type="file"
                 onChange={onFileChange}
-                required
             />
 
             <input type="submit" name="submit" value="Upload" />

@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
 import Loading from "../../components/navbar/Loading";
 import loginpic from "../../images/react2.svg";
+import { toast } from "react-toastify";
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,9 +22,7 @@ function Login() {
     const signInWithEmailAndPassword = async (email, password) => {
         await auth
             .signInWithEmailAndPassword(email, password)
-            .then((response) => {
-                // this works fine because response.message is a string
-            });
+            .then(() => toast.info(" User Logged In"));
 
         return history.replace("/dashboard");
     };
