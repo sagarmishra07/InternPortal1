@@ -16,7 +16,50 @@ import JobDetail from "./Pages/JobDetail";
 import Contact from "./Pages/Contact";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+
+//MCQ Imports
+import axios from "axios";
+import Mcq_Home from "./Pages/mcq/Mcq_Home";
+import Mcq_Result from "./Pages/mcq/Mcq_Result";
+import Quiz from "./Pages/mcq/Quiz";
+import { useState } from "react";
+
 function App() {
+    //MCQ Questions
+    const [questions, setQuestions] = useState();
+    const [name, setName] = useState();
+    const [score, setScore] = useState(0);
+    var list = [];
+    var filterList = [];
+    // const fetchQuestions = async (category = "", difficulty = "") => {
+    //     const { data } = await axios.get(
+    //         `https://opentdb.com/api.php?amount=10${
+    //             category && `&category=${category}`
+    //         }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
+    //     );
+
+    //     setQuestions(data.results);
+    // };
+
+    const fetchQuestions = (category = "", difficulty = "") => {
+        axios.get("http://localhost:3000/data.json").then((res) => {
+            console.log("RESPONSE : ", res.data.results);
+            list = res.data.results;
+            console.log("LIST :", list);
+            filterList = list.filter(
+                (arr) =>
+                    arr.category.includes(category) &&
+                    arr.difficulty.includes(difficulty)
+            );
+            console.log(category,difficulty)
+            console.log("FILETER LIST : ", filterList);
+
+            setQuestions(filterList);
+        });
+    };
+
+    //END MCQ Questions
+
     const Error = () => {
         return (
             <>
@@ -45,6 +88,28 @@ function App() {
                     <Route path="/jobs" component={Jobs} />
                     <Route path="/userForm/:id?" component={EditForm} />
                     <Route path="/userEdit/:id?" component={userEdit} />
+
+                    {/* MCQ PATH */}
+                    <Route path="/mcq">
+                        <Mcq_Home
+                            name={name}
+                            setName={setName}
+                            fetchQuestions={fetchQuestions}
+                        />
+                    </Route>
+                    <Route path="/result">
+                        <Mcq_Result name={name} score={score} />
+                    </Route>
+
+                    <Route path="/quiz">
+                        <Quiz
+                            name={name}
+                            questions={questions}
+                            score={score}
+                            setScore={setScore}
+                            setQuestions={setQuestions}
+                        />
+                    </Route>
 
                     <Route component={Error} />
                 </Switch>

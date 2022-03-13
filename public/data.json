@@ -1,0 +1,125 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        },
+        {
+            "category": "JavaScript",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Javascript is an _______ language?",
+            "correct_answer": "Object Oriented",
+            "incorrect_answers": [
+                "Object Based",
+                "Procedural",
+                "None of the above"
+            ]
+        }
+    ]
+}
