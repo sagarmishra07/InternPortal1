@@ -6,6 +6,7 @@ import { auth, db, logout } from "../firebase";
 import Userdashboard from "./Userdashboard";
 import Admindashboard from "./Admindashboard";
 import Loading from "../components/navbar/Loading";
+import StudentDashboard from "./StudentDashboard";
 
 function Dashboard() {
     const [user, loading] = useAuthState(auth);
@@ -40,7 +41,7 @@ function Dashboard() {
     return (
         <>
             {(() => {
-                if (isAdmin === "true") {
+                if (isAdmin === "admin") {
                     return (
                         <>
                             <Admindashboard
@@ -51,10 +52,21 @@ function Dashboard() {
                             />
                         </>
                     );
-                } else if (isAdmin === "false") {
+                } else if (isAdmin === "clients") {
                     return (
                         <>
                             <Userdashboard
+                                name={name}
+                                isAdmin={isAdmin}
+                                image={image}
+                                user={user}
+                            />
+                        </>
+                    );
+                } else if (isAdmin === "students") {
+                    return (
+                        <>
+                            <StudentDashboard
                                 name={name}
                                 isAdmin={isAdmin}
                                 image={image}

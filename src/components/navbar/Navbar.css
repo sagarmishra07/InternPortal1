@@ -27,16 +27,18 @@
 }
 .navbar-components li {
     height: 38px;
-    width: 120px;
+    width: 140px;
     font-size: 20px;
-    color: 144065;
+    color: #144065;
     font-family: poppins;
     font-weight: lighter;
+    display: flex;
+    justify-content: space-evenly;
 }
 .navbar-components .navbar-list ul li button {
     position: relative;
     top: -8px;
-    width: 87px;
+    width: 100px;
     height: 38px;
     color: white;
     font-weight: bolder;
@@ -44,6 +46,10 @@
     border: solid 2px #144065;
     border-radius: 0px 10px 10px 10px;
     transition: 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
 }
 .navbar-components .navbar-list ul li button:hover {
     color: #144065;

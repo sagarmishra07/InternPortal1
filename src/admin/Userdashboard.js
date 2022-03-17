@@ -183,7 +183,7 @@ function Userdashboard() {
                             </option>
                         </select>
                         <input
-                            type="text"
+                            type="number"
                             placeholder="Total Needed Interns"
                             name="total_positions"
                             required
@@ -194,13 +194,17 @@ function Userdashboard() {
                             name="city"
                             required
                         />
-                        <input
+                        <textarea
+                            rows={30}
+                            cols={30}
                             type="text"
                             placeholder="Education Qualification"
                             name="education"
                             required
                         />
-                        <input
+                        <textarea
+                            rows={30}
+                            cols={30}
                             type="text"
                             placeholder="Skills Required"
                             name="skills"

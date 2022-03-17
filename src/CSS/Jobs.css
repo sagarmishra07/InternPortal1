@@ -10,9 +10,9 @@
     color: #144065;
 }
 .job-container {
-    width: 80%;
+    width: 79%;
     height: 80vh;
-    padding: 5% 10% 5% 10%;
+    padding: 5% 10% 5% 8%;
     font-family: "Poppins", sans-serif;
     display: flex;
     /* align-items: center; */
@@ -29,11 +29,14 @@
         rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 10px;
     font-weight: 300;
+    display: flex;
+    justify-content: center;
 }
 .category-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-top: 1%;
 }
 .category-container h3 {
     font-weight: 300;
@@ -85,9 +88,9 @@
 }
 .job-container .column-right .card .Link .apply {
     margin-top: 50px;
-    margin-right: 20px;
+    margin-right: 100px;
     border-radius: 0px 10px 10px 10px;
-    width: 80%;
+    width: 70%;
     height: 35%;
     color: white;
     background-color: #144065;
