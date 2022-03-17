@@ -23,6 +23,7 @@ import Mcq_Home from "./Pages/mcq/Mcq_Home";
 import Mcq_Result from "./Pages/mcq/Mcq_Result";
 import Quiz from "./Pages/mcq/Quiz";
 import { useState } from "react";
+import StudentRegister from "./Pages/User/StudentRegister";
 
 function App() {
     //MCQ Questions
@@ -51,7 +52,7 @@ function App() {
                     arr.category.includes(category) &&
                     arr.difficulty.includes(difficulty)
             );
-            console.log(category,difficulty)
+            console.log(category, difficulty);
             console.log("FILETER LIST : ", filterList);
 
             setQuestions(filterList);
@@ -75,6 +76,10 @@ function App() {
                     <Route exact path="/" component={Homepage} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
+                    <Route
+                        path="/studentregister"
+                        component={StudentRegister}
+                    />
                     <Route path="/reset" component={Reset} />
                     <Route path="/dashboard" component={Dashboard} />
                     <Route path="/Userdashboard" component={Userdashboard} />

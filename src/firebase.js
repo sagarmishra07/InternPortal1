@@ -17,7 +17,7 @@ const auth = app.auth();
 const db = app.firestore();
 
 export const logout = () => {
-    auth.signOut().then(() => toast.info("Logged Out"));
+    auth.signOut();
 };
 
 export { app, auth, db };

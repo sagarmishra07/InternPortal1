@@ -17,7 +17,7 @@ const Request = ({ users, post }) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        if (!fileUrl) return toast.error("Select your CV before submit");
+        if (!fileUrl) return;
         await db
             .collection("users")
             .doc(users.uid)

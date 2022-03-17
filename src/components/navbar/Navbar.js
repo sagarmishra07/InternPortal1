@@ -33,10 +33,10 @@ function Navbar() {
                                         <Link to="/roadmap">Roadmap</Link>
                                     </li>
                                     <li>
-                                        <Link to="/about">about</Link>
+                                        <Link to="/about">About Us</Link>
                                     </li>
                                     <li>
-                                        <Link to="/contact">contact</Link>
+                                        <Link to="/contact">Contact US</Link>
                                     </li>
                                     <Link to="/dashboard">
                                         <li>Hi {users.name},</li>
@@ -67,14 +67,14 @@ function Navbar() {
                                     <Link to="/roadmap">Roadmap</Link>
                                 </li>
                                 <li>
-                                    <Link to="/about">about</Link>
+                                    <Link to="/about">About Us</Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact">contact</Link>
+                                    <Link to="/contact">Contact Us</Link>
                                 </li>
                                 <li>
                                     <Link to="/login">
-                                        <button>Employeer</button>
+                                        <button>Login</button>
                                     </Link>
                                 </li>
                             </ul>

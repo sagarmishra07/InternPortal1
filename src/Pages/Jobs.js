@@ -49,37 +49,39 @@ function Jobs() {
         <>
             <Navbar />
 
-            <h2 class="job-heading">Recent Interns</h2>
-            <div class="job-container">
-                <div class="column-left">
-                    <div class="category-container">
-                        <h3>Internship Types</h3>
-                        <select
-                            name="job_type"
-                            id="job_type"
-                            onChange={(event) => {
-                                setSearchTerm(event.target.value);
-                            }}
-                        >
-                            <option value="all">All</option>
-                            <option value="Frontend">Frontend</option>
-                            <option value="Backend">Backend</option>
-                            <option value="FullStack">FullStack</option>
-                            <option value="QA">QA</option>
-                            <option value="UI/UX">UI/UX</option>
-                            <option value="Project Manager">
-                                Project Manager
-                            </option>
-                        </select>
-                        <br />
+            <h2 className="job-heading">Recent Interns</h2>
+            <div className="job-container">
+                <div className="column-left">
+                    <div className="category-container">
+                        <div>
+                            <h3>Internship Types</h3>
+                            <select
+                                name="job_type"
+                                id="job_type"
+                                onChange={(event) => {
+                                    setSearchTerm(event.target.value);
+                                }}
+                            >
+                                <option value="all">All</option>
+                                <option value="Frontend">Frontend</option>
+                                <option value="Backend">Backend</option>
+                                <option value="FullStack">FullStack</option>
+                                <option value="QA">QA</option>
+                                <option value="UI/UX">UI/UX</option>
+                                <option value="Project Manager">
+                                    Project Manager
+                                </option>
+                            </select>
+                            <br />
 
-                        <input
-                            type="text"
-                            placeholder="Search..."
-                            onChange={(event) => {
-                                setSearchTerm(event.target.value);
-                            }}
-                        />
+                            <input
+                                type="text"
+                                placeholder="Search..."
+                                onChange={(event) => {
+                                    setSearchTerm(event.target.value);
+                                }}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div class="column-right">

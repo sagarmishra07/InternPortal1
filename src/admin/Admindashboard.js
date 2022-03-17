@@ -108,15 +108,20 @@ const Admindashboard = ({ name, image }) => {
                         <div class="profile-table">
                             <div class="column">
                                 {users
-                                    .filter((val) => {
-                                        if (val.isAdmin == "false") {
-                                            return val;
-                                        }
-                                    })
+                                    // .filter((val) => {
+                                    //     if (val.isAdmin == "false") {
+                                    //         return val;
+                                    //     }
+                                    // })
                                     .map((user) => {
                                         return (
                                             <div class="row">
-                                                <div id="th">{user.name}</div>
+                                                <div id="th">
+                                                    {user.name.toUpperCase()}
+                                                </div>
+                                                <div id="td">
+                                                    {user.isAdmin.toUpperCase()}
+                                                </div>
                                                 <div id="td">
                                                     <Link
                                                         to={`/user/${user.id}`}

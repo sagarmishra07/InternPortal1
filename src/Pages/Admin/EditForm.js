@@ -18,7 +18,7 @@ function EditForm() {
 
         website: "",
         post: "",
-        isAdmin: false,
+        isAdmin: "",
         isVerified: false,
     });
 
@@ -117,8 +117,9 @@ function EditForm() {
                         value={user.isAdmin}
                         onChange={oninputChange}
                     >
-                        <option value={true}>true</option>
-                        <option value={false}>false</option>
+                        <option value="admin">Admin</option>
+                        <option value="clients">Clients</option>
+                        <option value="students">Students</option>
                     </select>
                     <br />
                     IsVerified?:{" "}
