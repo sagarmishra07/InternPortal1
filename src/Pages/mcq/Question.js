@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@material-ui/core";
 import { useState } from "react";
 import { useHistory } from "react-router";
@@ -17,6 +18,28 @@ const Question = ({
     const [selected, setSelected] = useState();
     const [error, setError] = useState(false);
 
+    //timer
+    const [timer, setTimer] = React.useState(10);
+    const id = React.useRef(null);
+
+    const clear = () => {
+        window.clearInterval(id.current);
+    };
+    React.useEffect(() => {
+        id.current = window.setInterval(() => {
+            setTimer((time) => time - 1);
+        }, 1000);
+        return () => clear();
+    }, []);
+
+    React.useEffect(() => {
+        if (timer === 0) {
+            // clear();
+            setCurrQues(currQues + 1);
+            setTimer(10);
+        }
+    }, [timer]);
+
     const history = useHistory();
 
     const handleSelect = (i) => {
@@ -32,11 +55,14 @@ const Question = ({
     };
 
     const handleNext = () => {
-        if (currQues > 3) { // HOW MANY QUESTIONs??
+        if (currQues > 3) {
+            // HOW MANY QUESTIONs?? 3 == 5 questions
             history.push("/result");
+            
         } else if (selected) {
             setCurrQues(currQues + 1);
             setSelected();
+            setTimer(10);
         } else setError("Please select an option first");
     };
 
@@ -47,11 +73,15 @@ const Question = ({
 
     return (
         <div className="question">
-            <h1>Question {currQues + 1} :</h1>
+            <h1>
+                Question {currQues + 1} : Time left : {timer}{" "}
+            </h1>
             {console.log(currQues)}
 
             <div className="singleQuestion">
-                <h2>{questions[currQues].question}</h2>
+                <h2>
+                    {questions[currQues] ? questions[currQues].question : null}
+                </h2>
                 <div className="options">
                     {error && <ErrorMessage>{error}</ErrorMessage>}
                     {options &&

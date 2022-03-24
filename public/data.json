@@ -17,11 +17,11 @@
             "category": "JavaScript",
             "type": "multiple",
             "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
+            "question": "Which of the following keywords is used to define a variable in Javascript?",
+            "correct_answer": "Both A and B",
             "incorrect_answers": [
-                "Object Based",
-                "Procedural",
+                "var",
+                "let",
                 "None of the above"
             ]
         },
@@ -29,11 +29,11 @@
             "category": "JavaScript",
             "type": "multiple",
             "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
+            "question": "Which of the following methods is used to access HTML elements using Javascript?",
+            "correct_answer": "Both A and B",
             "incorrect_answers": [
-                "Object Based",
-                "Procedural",
+                "getElementbyId()",
+                "getElementsByClassName()",
                 "None of the above"
             ]
         },
@@ -41,84 +41,96 @@
             "category": "JavaScript",
             "type": "multiple",
             "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
+            "question": "How can a datatype be declared to be a constant type?",
+            "correct_answer": "const",
             "incorrect_answers": [
-                "Object Based",
-                "Procedural",
-                "None of the above"
+                "var",
+                "let",
+                "constant"
             ]
         },
         {
             "category": "JavaScript",
             "type": "multiple",
             "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
+            "question": "Which of the following methods can be used to display data in some form using Javascript?",
+            "correct_answer": "All of the above",
             "incorrect_answers": [
-                "Object Based",
-                "Procedural",
-                "None of the above"
+                "document.write()",
+                "console.log()",
+                "window.alert()"
             ]
         },
         {
             "category": "JavaScript",
             "type": "multiple",
             "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
+            "question": "What keyword is used to check whether a given property is valid or not?",
+            "correct_answer": "in",
             "incorrect_answers": [
-                "Object Based",
-                "Procedural",
+                "is in",
+                "exists",
+                "lies"
+            ]
+        },
+        {
+            "category": "CSS",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": " CSS stands for -",
+            "correct_answer": "Cascading style sheets",
+            "incorrect_answers": [
+                "Color and style sheets",
+                "Cascade style sheets",
                 "None of the above"
             ]
         },
         {
-            "category": "JavaScript",
+            "category": "CSS",
             "type": "multiple",
             "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
+            "question": "The property in CSS used to change the background color of an element is -",
+            "correct_answer": "background-color",
             "incorrect_answers": [
-                "Object Based",
-                "Procedural",
+                "bgcolor",
+                "color",
+                "All of the above"
+            ]
+        },
+        {
+            "category": "CSS",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "The CSS property used to control the element's font-size is -",
+            "correct_answer": "font-size",
+            "incorrect_answers": [
+                "text-style",
+                "text-size",
                 "None of the above"
             ]
         },
         {
-            "category": "JavaScript",
+            "category": "CSS",
             "type": "multiple",
             "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
+            "question": "The HTML attribute used to define the inline styles is -",
+            "correct_answer": "style",
             "incorrect_answers": [
-                "Object Based",
-                "Procedural",
+                "styles",
+                "class",
                 "None of the above"
             ]
         },
         {
-            "category": "JavaScript",
+            "category": "CSS",
             "type": "multiple",
             "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
+            "question": "The HTML attribute used to define the internal stylesheet is -",
+            "correct_answer": "<style>",
             "incorrect_answers": [
-                "Object Based",
-                "Procedural",
-                "None of the above"
-            ]
-        },
-        {
-            "category": "JavaScript",
-            "type": "multiple",
-            "difficulty": "easy",
-            "question": "Javascript is an _______ language?",
-            "correct_answer": "Object Oriented",
-            "incorrect_answers": [
-                "Object Based",
-                "Procedural",
-                "None of the above"
+                "style",
+                "<link>",
+                "<script>"
             ]
         }
     ]
