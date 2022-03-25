@@ -24,28 +24,25 @@ function Navbar() {
                             <div className="navbar-list">
                                 <ul type="none">
                                     <li>
-                                        <Link to="/">Homepage</Link>
+                                        <Link to="/">Home</Link>
                                     </li>
                                     <li>
-                                        <Link to="/jobs">Internships</Link>
+                                        <Link to="/jobs">Internship</Link>
                                     </li>
                                     <li>
-                                        <Link to="/roadmap">Roadmaps</Link>
+                                        <Link to="/roadmap">Roadmap</Link>
                                     </li>{" "}
                                     <li>
                                         <Link to="/interview">Interview</Link>
                                     </li>
                                     <li>
-                                        <Link to="/interview">Interview</Link>
-                                    </li>
-                                    {/* <li>
                                         <Link to="/about">About Us</Link>
-                                    </li> */}
+                                    </li>
                                     <li>
                                         <Link to="/contact">Contact Us</Link>
                                     </li>
                                     <Link to="/dashboard">
-                                        <li>Hi {users.name},</li>
+                                        <li>Hi User,</li>
                                     </Link>{" "}
                                     <li>
                                         <button onClick={logout}>Logout</button>
@@ -67,21 +64,21 @@ function Navbar() {
                                     <Link to="/">Home</Link>
                                 </li>
 
-                                <li>
+                                {/* <li>
                                     <Link to="/jobs">Internships</Link>
                                 </li>
-                                
+
                                 <li>
                                     <Link to="/roadmap">Roadmap</Link>
                                 </li>
                                 <li>
-                                        <Link to="/interview">Interview</Link>
-                                    </li>
-                                {/* <li>
-                                    <Link to="/about">About Us</Link>
+                                    <Link to="/interview">Interview</Link>
                                 </li> */}
                                 <li>
-                                    <Link to="/contact">Contact Us</Link>
+                                    <Link to="/about">About</Link>
+                                </li>
+                                <li>
+                                    <Link to="/contact">Contact</Link>
                                 </li>
                                 <li>
                                     <Link to="/login">

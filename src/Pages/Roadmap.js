@@ -16,7 +16,6 @@ import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Loading from "../components/navbar/Loading";
-const cards = [1, 2, 3];
 
 const theme = createTheme();
 

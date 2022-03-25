@@ -25,7 +25,7 @@ const Request = ({ users, post }) => {
     const user = useSelector((state) => state.firebase.profile);
     const onSubmit = async (e) => {
         e.preventDefault();
-        if (!fileUrl) return toast.info("Selecr CV First / PDF is preferred");
+        if (!fileUrl) return;
         await db
             .collection("users")
             .doc(users.uid)

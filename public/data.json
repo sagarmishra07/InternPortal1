@@ -18,7 +18,7 @@
             "type": "multiple",
             "difficulty": "easy",
             "question": "Which of the following keywords is used to define a variable in Javascript?",
-            "correct_answer": "Both A and B",
+            "correct_answer": "Both  are correct",
             "incorrect_answers": [
                 "var",
                 "let",
@@ -30,7 +30,7 @@
             "type": "multiple",
             "difficulty": "easy",
             "question": "Which of the following methods is used to access HTML elements using Javascript?",
-            "correct_answer": "Both A and B",
+            "correct_answer": "Both are correct",
             "incorrect_answers": [
                 "getElementbyId()",
                 "getElementsByClassName()",

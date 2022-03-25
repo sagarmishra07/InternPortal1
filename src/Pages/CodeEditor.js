@@ -4,7 +4,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/ace";
 import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/theme-github";
-import Navbar from "../components/navbar/Navbar";
+
 // let text =
 //     '{\n  "id": 0,\n  ' +
 //     '"script": """\n   function add(x, y) {\n      return x + y;\n   }\n   add(1, 2);\n   """' +
@@ -17,7 +17,6 @@ function onChange(newValue) {
 function CodeEditor() {
     return (
         <div className="App">
-            <Navbar />
             <div
                 style={{
                     display: "flex",

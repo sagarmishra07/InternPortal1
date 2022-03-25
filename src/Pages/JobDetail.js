@@ -82,8 +82,7 @@ function UserDetail() {
 
                                                     <LazyLoadImage
                                                         src={users.image}
-                                                        height="200px"
-                                                        width="200px"
+                                                        width="fit"
                                                         effect="blur"
                                                     />
                                                     <p>{users.name}</p>
@@ -91,10 +90,7 @@ function UserDetail() {
                                                     <p> {val.city}</p>
                                                     <p> {val.job_type}</p>
 
-                                                    <p>
-                                                        Qualification:{" "}
-                                                        {val.education}
-                                                    </p>
+                                                    <p>{val.education}</p>
                                                     <p>
                                                         Total Positions:
                                                         {val.total_positions}

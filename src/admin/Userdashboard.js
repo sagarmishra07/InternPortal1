@@ -19,6 +19,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
 TimeAgo.addDefaultLocale(en);
 
 function AuthIsLoaded({ children }) {
@@ -208,9 +209,13 @@ function Userdashboard() {
                         autoFocus
                     />{" "}
                     <Box sx={{ minWidth: 225 }}>
-                        <FormControl fullWidth>
+                        <FormControl
+                            fullWidth
+                            autoFocus
+                            label="Internship Types"
+                        >
                             <InputLabel>Internship Types</InputLabel>
-                            <Select name="job_type" id="job_type">
+                            <Select name="job_type" id="job_type" autoFocus>
                                 {/* <select name="job_type" id="job_type" required> */}
                                 <MenuItem value="all">All</MenuItem>
                                 <MenuItem value="Frontend">Frontend</MenuItem>
@@ -229,7 +234,7 @@ function Userdashboard() {
                         margin="normal"
                         required
                         type="number"
-                        placeholder="Total Needed Interns"
+                        label="Total Needed Interns"
                         name="total_positions"
                         autoComplete="total_positions"
                         autoFocus
@@ -237,37 +242,39 @@ function Userdashboard() {
                     <TextField
                         margin="normal"
                         required
-                        placeholder="City"
+                        label="City"
                         name="city"
                         autoComplete="City"
                         autoFocus
                         fullWidth
+                        type="text"
                     />{" "}
-                    <TextField
-                        margin="normal"
-                        required
+                    <TextareaAutosize
+                        aria-label="minimum height"
+                        minRows={6}
                         placeholder="Education Qualification"
                         name="education"
                         autoComplete="education"
+                        style={{ width: 403 }}
                         autoFocus
-                        fullWidth
-                    />{" "}
-                    <TextField
-                        margin="normal"
-                        required
+                    />
+                    <TextareaAutosize
+                        aria-label="minimum height"
+                        minRows={6}
                         placeholder="Skills Required"
                         name="skills"
                         autoComplete="skills"
+                        style={{ width: 403 }}
                         autoFocus
-                        fullWidth
-                    />{" "}
-                    Apply Before:{" "}
+                    />
                     <TextField
                         type="date"
                         placeholder="Apply Before"
                         name="apply_before"
                         min={disablePastDate()}
+                        style={{ width: 404 }}
                         required
+                        autoFocus
                     />
                     <center>
                         <Button type="submit">Create Post</Button>

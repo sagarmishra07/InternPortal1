@@ -44,24 +44,16 @@ class Two extends React.Component {
         return (
             <div class="technical">
                 <ol>
-                    <li>
-                        Describe how you used your problem-solving skills to
-                        benefit a team{" "}
-                    </li>
-                    <li>
-                        How would your faculty/friends/co-workers describe you?
-                    </li>
+                    <li>What are the newly introduced input types in HTML5?</li>
 
+                    <li>What is SVG and why is it used?</li>
+                    <li>How can page loading time be reduced?</li>
                     <li>
-                        What three words would you choose to best describe
-                        yourself?
+                        {" "}
+                        What is the difference between localStorage and
+                        sessionStorage objects?
                     </li>
-                    <li>
-                        Describe a time when you disagreed with a team member.
-                        How did you resolve the problem?
-                    </li>
-                    <li>What accomplishments are you most proud of?</li>
-                    <li>Why are you interested in this internship?</li>
+                    <li>What is the difference between SOAP and REST?</li>
                 </ol>
             </div>
         );
@@ -72,22 +64,15 @@ class Three extends React.Component {
         return (
             <div class="written">
                 <ol>
-                    <li>What accomplishments are you most proud of?</li>
-                    <li>Why are you interested in this internship?</li>
                     <li>
-                        Describe a time when you disagreed with a team member.
-                        How did you resolve the problem?
+                        Can you give an example of using an ID selector in CSS?
                     </li>
+                    <li>What is the use of grouping in CSS3?Give example</li>
+                    <li>Write your name using console.log?</li>
+                    <li>Make a Array of objects and use Map function</li>
                     <li>
-                        Describe how you used your problem-solving skills to
-                        benefit a team{" "}
-                    </li>
-                    <li>
-                        How would your faculty/friends/co-workers describe you?
-                    </li>
-                    <li>
-                        What three words would you choose to best describe
-                        yourself?
+                        Make a Array of objects and use Reduce function and
+                        Filter function
                     </li>
                 </ol>
             </div>

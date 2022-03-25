@@ -1,11 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../CSS/Userdashboard.css";
 import { logout } from "../firebase";
 import { useFirestore } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 import { isLoaded } from "react-redux-firebase";
 import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
+
+import Box from "@mui/material/Box";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { Link } from "react-router-dom";
+const theme = createTheme();
 
 function AuthIsLoaded({ children }) {
     const user = useSelector((state) => state.firebase.profile);
@@ -86,6 +99,9 @@ function StudentDashboard() {
             <center>
                 <Button variant="contained" color="grey">
                     <Link to="/mcq">MCQ Test</Link>
+                </Button>{" "}
+                <Button variant="contained" color="grey">
+                    <Link to="/code">Code Editor</Link>
                 </Button>
             </center>
         </>
