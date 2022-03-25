@@ -176,7 +176,7 @@ function Homepage() {
                         <img src={react1}></img>
                     </div>
                     <div class="home-r">
-                        <h3>Confused where to start?watch a roadmap</h3>
+                        <h3>Confused where to start,watch a roadmap</h3>
                         <p>
                             without proper information we are unable to know the
                             starting point. But this platform helps you to know
@@ -242,10 +242,7 @@ function Homepage() {
                         <Link to="/register">
                             {" "}
                             <button>Register</button>
-                        </Link>
-                    </div>
-                    <div class="home-r">
-                        <img src={react7}></img>
+                        </Link>{" "}
                     </div>
                 </section>
             </section>

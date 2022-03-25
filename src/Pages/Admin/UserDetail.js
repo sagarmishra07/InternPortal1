@@ -6,6 +6,7 @@ import { useFirestore } from "react-redux-firebase";
 import { useEffect } from "react";
 import Loading from "../../components/navbar/Loading";
 import { toast } from "react-toastify";
+import Button from "@mui/material/Button";
 function UserDetail() {
     const [user, setUser] = useState(null);
     const { id } = useParams();
@@ -56,47 +57,84 @@ function UserDetail() {
 
     return (
         <>
-            <div className="">
-                <h1>User Detail</h1>
-                <h4>User Name : {user.name}</h4>
-                <LazyLoadImage
-                    src={user.image}
-                    height="500px"
-                    width="400px"
-                    effect="blur"
-                    alt=""
-                    effect="blur"
-                />
-                <h4>Email : {user.email}</h4>
-                <h4>Address : {user.location}</h4>
-                <h4>Phone : {user.contact}</h4>
-                <h4>website : {user.website}</h4>
+            <center>
+                <div className="">
+                    <h1>User Detail</h1>
+                    <h4>User Name : {user.name}</h4>
+                    <LazyLoadImage
+                        src={user.image}
+                        height="250px"
+                        width="200px"
+                        effect="blur"
+                        alt=""
+                    />
+                    <h4>Email : {user.email}</h4>
+                    <h4>Address : {user.location}</h4>
+                    <h4>Phone : {user.contact}</h4>
+                    <h4>website : {user.website}</h4>
 
-                <Link to={`/userForm/${id}`}>edit profile</Link>
-            </div>
+                    <Link to={`/userForm/${id}`}>edit profile</Link>
+                </div>{" "}
+            </center>
             <section>
-                <h1>{user.name}'s POST</h1>
-                <div>
-                    {user.post101 &&
-                        user.post101.map((post) => (
-                            <div className="" key={post.id}>
-                                <h1>Title: {post.title}</h1>
-
-                                <li>City: {post.city}</li>
-                                <li>Job type: {post.job_type}</li>
-                                <li>Total Positions: {post.total_positions}</li>
-                                <li>
-                                    Education Qualification: {post.education}
-                                </li>
-                                <li>Experience Required: {post.experience}</li>
-                                <li>Skill Required: {post.skills}</li>
-                                <li>Apply Before: {post.apply_before}</li>
-
-                                <button onClick={() => deletePost(post)}>
-                                    Delete Post
-                                </button>
-                            </div>
-                        ))}
+                <center>
+                    <h1>{user.name}'s POST</h1>
+                </center>
+                <div className="profile-container">
+                    <div className="profile">
+                        {user.post101 &&
+                            user.post101.map((post) => (
+                                <div className="profile-table" key={post.id}>
+                                    <h2 className="profile-name">
+                                        {" "}
+                                        {post.title}
+                                    </h2>
+                                    <h2 className="profile-name"></h2>
+                                    <div className="row">
+                                        <div className="th">Location</div>
+                                        <div className="td">{post.city}</div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="th">Job Type</div>
+                                        <div className="td">
+                                            {post.job_type}
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="th">
+                                            Total Positions
+                                        </div>
+                                        <div className="td">
+                                            {post.total_positions}
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="th"> Qualification</div>
+                                        <div className="td">
+                                            {post.education}
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="th">Skill Required</div>
+                                        <div className="td">{post.skills}</div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="th">Apply Before</div>
+                                        <div className="td">
+                                            {post.apply_before}
+                                        </div>
+                                    </div>
+                                    <Button
+                                        type="submit"
+                                        color="error"
+                                        onClick={() => deletePost(post)}
+                                    >
+                                        Delete Post
+                                    </Button>
+                                </div>
+                            ))}
+                        <br />
+                    </div>
                 </div>
             </section>
         </>

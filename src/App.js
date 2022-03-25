@@ -4,7 +4,7 @@ import Register from "./Pages/User/Register";
 import Reset from "./Pages/User/Reset";
 import Dashboard from "./admin/Dashboard";
 import Homepage from "./components/landing/Homepage";
-import Roadmaps from "./Pages/Roadmaps";
+import Roadmap from "./Pages/Roadmap";
 import Jobs from "./Pages/Jobs";
 import Userdashboard from "./admin/Userdashboard";
 import Admindashboard from "./admin/Admindashboard";
@@ -16,7 +16,7 @@ import JobDetail from "./Pages/JobDetail";
 import Contact from "./Pages/Contact";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-
+import InterviewQues from "./Pages/InterviewQues";
 //MCQ Imports
 import axios from "axios";
 import Mcq_Home from "./Pages/mcq/Mcq_Home";
@@ -24,7 +24,8 @@ import Mcq_Result from "./Pages/mcq/Mcq_Result";
 import Quiz from "./Pages/mcq/Quiz";
 import { useState } from "react";
 import StudentRegister from "./Pages/User/StudentRegister";
-
+import ReactJs from "./components/Roadmaps/ReactJs";
+import Django from "./components/Roadmaps/Django";
 function App() {
     //MCQ Questions
     const [questions, setQuestions] = useState();
@@ -89,7 +90,10 @@ function App() {
                     <Route path="/job/:id?" component={JobDetail} />
                     <Route path="/about" component={About} />
                     <Route path="/contact" component={Contact} />
-                    <Route path="/roadmap" component={Roadmaps} />
+                    <Route path="/roadmap" component={Roadmap} />
+                    <Route path="/reactjs" component={ReactJs} />
+                    <Route path="/django" component={Django} />
+
                     <Route path="/jobs" component={Jobs} />
                     <Route path="/userForm/:id?" component={EditForm} />
                     <Route path="/userEdit/:id?" component={userEdit} />
@@ -115,6 +119,7 @@ function App() {
                             setQuestions={setQuestions}
                         />
                     </Route>
+                    <Route path="/interview" component={InterviewQues} />
 
                     <Route component={Error} />
                 </Switch>

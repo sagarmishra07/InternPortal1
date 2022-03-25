@@ -46,7 +46,7 @@ const CVrequest = ({ user }) => {
                 {request.map((user, index) => (
                     <div className="profile">
                         <div className="profile-table" key={user.id}>
-                            <h2 className="profile-name">{user.title}</h2>
+                            <h2 className="profile-name">{user.username}</h2>
 
                             <div className="row">
                                 <img src={user.cv} height="100" width="100" />

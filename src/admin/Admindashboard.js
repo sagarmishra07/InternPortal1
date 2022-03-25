@@ -6,8 +6,14 @@ import { toast } from "react-toastify";
 import { useFirestoreConnect, useFirestore } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 
-import { useFirebase } from "react-redux-firebase";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
 
+import Button from "@mui/material/Button";
 const Admindashboard = ({ name, image }) => {
     const firestore = useFirestore();
 
@@ -86,6 +92,7 @@ const Admindashboard = ({ name, image }) => {
                             <ul className="d-flex" id="contacts"></ul>
                         </div>
                     </div>
+
                     <nav>
                         <ul
                             className="d-flex justify-content-center"
@@ -94,71 +101,100 @@ const Admindashboard = ({ name, image }) => {
                             <li id="list-item">
                                 <Link to="/">Return Homepage</Link>
                             </li>
-
-                            <li id="list-item">
-                                <button onClick={logout}>LOGOUT</button>
-                            </li>
                         </ul>
+                        <br />
+                        <Button type="submit" color="error" onClick={logout}>
+                            Logout
+                        </Button>
                     </nav>
                 </div>
             </header>
-            <div class="profile-container">
-                <div class="profile-content">
-                    <div class="profile">
-                        <div class="profile-table">
-                            <div class="column">
-                                {users
-                                    // .filter((val) => {
-                                    //     if (val.isAdmin == "false") {
-                                    //         return val;
-                                    //     }
-                                    // })
-                                    .map((user) => {
-                                        return (
-                                            <div class="row">
-                                                <div id="th">
-                                                    {user.name.toUpperCase()}
-                                                </div>
-                                                <div id="td">
-                                                    {user.isAdmin.toUpperCase()}
-                                                </div>
-                                                <div id="td">
-                                                    <Link
-                                                        to={`/user/${user.id}`}
-                                                    >
-                                                        {" "}
-                                                        View Details
-                                                    </Link>
-                                                </div>
-                                                <div id="td">
-                                                    <button
-                                                        onClick={() =>
-                                                            deleteUser(user.id)
-                                                        }
-                                                    >
-                                                        Delete User
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                            </div>
-                        </div>{" "}
-                    </div>{" "}
-                </div>{" "}
-            </div>
-            <h1>Publish Roadmap</h1>
-            <form onSubmit={onSubmit}>
-                <div>
-                    <div>
-                        <input type="text" name="title" placeholder="title" />
-                        <h5>Upload roadmap</h5>
-                        <input type="file" onChange={onFileChange} />
 
+            <center>
+                <TableContainer>
+                    <Table sx={{ width: 1200 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>
+                                    <h3>
+                                        <b>Users</b>
+                                    </h3>
+                                </TableCell>
+                                <TableCell align="right">
+                                    <h3>
+                                        <b>Email</b>
+                                    </h3>
+                                </TableCell>
+                                <TableCell align="right">
+                                    <h3>
+                                        <b>Roles</b>{" "}
+                                    </h3>
+                                </TableCell>
+                                <TableCell align="right">
+                                    <h3>
+                                        <b>Action 1</b>
+                                    </h3>
+                                </TableCell>
+                                <TableCell align="right">
+                                    <h3>
+                                        <b>Action 2</b>
+                                    </h3>
+                                </TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {users.map((user) => (
+                                <TableRow
+                                    key={user.uid}
+                                    sx={{
+                                        "&:last-child td, &:last-child th": {
+                                            border: 0,
+                                        },
+                                    }}
+                                >
+                                    <TableCell component="th" scope="row">
+                                        {user.name.toUpperCase()}
+                                    </TableCell>{" "}
+                                    <TableCell align="right">
+                                        {user.email}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {user.isAdmin.toUpperCase()}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        <Button color="error">
+                                            <Link to={`/user/${user.id}`}>
+                                                View Details
+                                            </Link>
+                                        </Button>
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        <Button
+                                            color="error"
+                                            onClick={() => deleteUser(user.id)}
+                                        >
+                                            Delete User
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </center>
+
+            {/* <h1>Publish Roadmap</h1>
+            <form onSubmit={onSubmit}>
+            <div>
+            <div>
+            <input type="text" name="title" placeholder="title" />
+            <h5>Upload roadmap</h5>
+            <input type="file" onChange={onFileChange} />
+            
                         <button>Publish</button>
                     </div>
                 </div>
-            </form>{" "}
+            </form>{" "} */}
         </>
     );
 };

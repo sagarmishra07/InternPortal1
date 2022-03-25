@@ -1,0 +1,156 @@
+
+.blog-container {
+  /* background: #fff; */
+  /* background: #e5ded8; */
+  border:1px solid ;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, .2) 0 4px 2px -2px;
+  font-family: "adelle-sans", sans-serif;
+  font-weight: 100;
+  margin: 48px auto;
+  width: 20rem;
+}
+@media screen and (min-width: 480px) {
+  .blog-container {
+    width: 28rem;
+ }
+}
+@media screen and (min-width: 767px) {
+  .blog-container {
+    width: 40rem;
+ }
+}
+@media screen and (min-width: 959px) {
+  .blog-container {
+    width: 70rem;
+    height: 40rem;
+ }
+}
+.blog-container a {
+  color: #4d4dff;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+.blog-container a:hover {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+.blog-cover {
+  background: linear-gradient(to right, rgba(49,207,69,0.5), #50e3c2);
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+  height: 3.5rem;
+  box-shadow: inset rgba(0, 0, 0, .2) 0 64px 64px 16px;
+}
+.blog-author, .blog-author--no-cover {
+  margin: 0 auto;
+  padding-top: 0.125rem;
+  width: 80%;
+}
+.blog-author h3::before, .blog-author--no-cover h3::before {
+  background: url("https://img.freepik.com/free-vector/modern-letter-pk-abstract-design-logo_451710-115.jpg?w=900");
+  background-size: cover;
+  border-radius: 50%;
+  content: " ";
+  display: inline-block;
+  height: 32px;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 8px;
+  width: 32px;
+}
+.blog-author h3 {
+  color: #fff;
+  font-weight: 100;
+}
+.blog-author--no-cover h3 {
+  color: #999;
+  font-weight: 100;
+}
+.blog-body {
+  margin: 20px auto;
+  width: 80%;
+}
+
+.blog-title h1 a {
+  color: #333;
+  /* font-weight: 100; */
+
+}
+.blog-summary p {
+  color: #4d4d4d;
+  margin: 10px auto;
+}
+.blog-tags ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+}
+.blog-tags li + li {
+  margin-left: 0.5rem;
+}
+.blog-tags a {
+  border: 1px solid #999;
+  border-radius: 3px;
+  color: #999;
+  font-size: 1rem;
+  height: 2rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  padding: 0 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 5rem;
+  margin-bottom: 0;
+}
+.blog-footer {
+  margin: 0 auto;
+  padding-bottom: 0.125rem;
+  width: 80%;
+}
+
+.blog-footer ol{
+  margin-top: 2rem;
+  padding: 10px;
+}
+.blog-footer li {
+  font-size: 1rem;
+  height: 1.5rem;
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+  text-align: left;
+  /* text-transform: uppercase; */
+  position: relative;
+  white-space: nowrap;
+}
+.blog-footer li a {
+  color: #999;
+}
+
+.multistep__btn--next{
+  margin: 30px 0px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 5px 25px;
+  border: 1px solid #999;
+  color: #999;
+  background-color: transparent;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.42s;
+}
+.multistep__btn--prev{
+  margin: 30px 20px 0px 0px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 5px 10px;
+  border: 1px solid #999;
+  color: #999;
+  background-color: transparent;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.42s;
+}

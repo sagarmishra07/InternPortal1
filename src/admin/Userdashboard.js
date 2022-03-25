@@ -10,7 +10,15 @@ import ReactTimeAgo from "react-time-ago";
 import { toast } from "react-toastify";
 import en from "javascript-time-ago/locale/en.json";
 import CVrequest from "./CVrequest";
-
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import TextField from "@mui/material/TextField";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
 TimeAgo.addDefaultLocale(en);
 
 function AuthIsLoaded({ children }) {
@@ -44,6 +52,20 @@ function Userdashboard() {
         if (!user) return history.replace("/");
         else return history.push("/dashboard");
     }, [user]);
+    const style = {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: 400,
+        bgcolor: "background.paper",
+        border: "2px solid #000",
+        boxShadow: 24,
+        p: 4,
+    };
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     const submitForm = async (e) => {
         e.preventDefault();
@@ -111,6 +133,7 @@ function Userdashboard() {
 
     return (
         <>
+            {" "}
             <header>
                 <div className="dashboard-container">
                     <div className="d-flex space-between align-items-center">
@@ -155,75 +178,104 @@ function Userdashboard() {
                                     Edit Profile
                                 </Link>
                             </li>
-                            <li id="list-item">
-                                <button onClick={logout}>LOGOUT</button>
-                            </li>
                         </ul>
+                        <br />
+                        <Button type="submit" color="error" onClick={logout}>
+                            Logout
+                        </Button>
                     </nav>
                 </div>
             </header>
-            <div className="join-reg-container">
-                <div className="join-reg">
-                    <form onSubmit={submitForm}>
-                        <h2>Create Internship Post</h2>
-                        <input
-                            type="text"
-                            placeholder="Enter Post Title"
-                            name="title"
-                            required
-                        />
-                        <select name="job_type" id="job_type" required>
-                            <option value="Frontend">Frontend</option>
-                            <option value="Backend">Backend</option>
-                            <option value="FullStack">FullStack</option>
-                            <option value="QA">QA</option>
-                            <option value="UI/UX">UI/UX</option>
-                            <option value="Project Manager">
-                                Project Manager
-                            </option>
-                        </select>
-                        <input
-                            type="number"
-                            placeholder="Total Needed Interns"
-                            name="total_positions"
-                            required
-                        />
-                        <input
-                            type="text"
-                            placeholder="City"
-                            name="city"
-                            required
-                        />
-                        <textarea
-                            rows={30}
-                            cols={30}
-                            type="text"
-                            placeholder="Education Qualification"
-                            name="education"
-                            required
-                        />
-                        <textarea
-                            rows={30}
-                            cols={30}
-                            type="text"
-                            placeholder="Skills Required"
-                            name="skills"
-                            required
-                        />
-                        Apply Before:{" "}
-                        <input
-                            type="date"
-                            placeholder="Apply Before"
-                            name="apply_before"
-                            min={disablePastDate()}
-                            required
-                        />
-                        <input type="submit" name="submit" value="Post" />
-                    </form>
-                </div>
-            </div>
             <center>
-                <h1>Job Posts</h1>
+                <Button onClick={handleOpen}>Create Post</Button>
+            </center>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style} onSubmit={submitForm} component="form">
+                    <h2>Create Internship Post</h2>
+                    <TextField
+                        fullWidth
+                        margin="normal"
+                        required
+                        id="title"
+                        label="Enter Post Title"
+                        name="title"
+                        autoComplete="title"
+                        autoFocus
+                    />{" "}
+                    <Box sx={{ minWidth: 225 }}>
+                        <FormControl fullWidth>
+                            <InputLabel>Internship Types</InputLabel>
+                            <Select name="job_type" id="job_type">
+                                {/* <select name="job_type" id="job_type" required> */}
+                                <MenuItem value="all">All</MenuItem>
+                                <MenuItem value="Frontend">Frontend</MenuItem>
+                                <MenuItem value="Backend">Backend</MenuItem>
+                                <MenuItem value="FullStack">FullStack</MenuItem>
+                                <MenuItem value="QA">QA</MenuItem>
+                                <MenuItem value="UI/UX">UI/UX</MenuItem>
+                                <MenuItem value="Project Manager">
+                                    Project Manager
+                                </MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Box>
+                    <TextField
+                        fullWidth
+                        margin="normal"
+                        required
+                        type="number"
+                        placeholder="Total Needed Interns"
+                        name="total_positions"
+                        autoComplete="total_positions"
+                        autoFocus
+                    />{" "}
+                    <TextField
+                        margin="normal"
+                        required
+                        placeholder="City"
+                        name="city"
+                        autoComplete="City"
+                        autoFocus
+                        fullWidth
+                    />{" "}
+                    <TextField
+                        margin="normal"
+                        required
+                        placeholder="Education Qualification"
+                        name="education"
+                        autoComplete="education"
+                        autoFocus
+                        fullWidth
+                    />{" "}
+                    <TextField
+                        margin="normal"
+                        required
+                        placeholder="Skills Required"
+                        name="skills"
+                        autoComplete="skills"
+                        autoFocus
+                        fullWidth
+                    />{" "}
+                    Apply Before:{" "}
+                    <TextField
+                        type="date"
+                        placeholder="Apply Before"
+                        name="apply_before"
+                        min={disablePastDate()}
+                        required
+                    />
+                    <center>
+                        <Button type="submit">Create Post</Button>
+                    </center>
+                </Box>
+            </Modal>
+            <center>
+                <h2>Job Posts</h2>
             </center>
             <div className="profile-container">
                 <div className="profile">
@@ -237,7 +289,6 @@ function Userdashboard() {
                                         locale="en-US"
                                     />
                                 </h2>
-
                                 <div className="row">
                                     <div className="th">Location</div>
                                     <div className="td">{post.city}</div>
@@ -256,7 +307,6 @@ function Userdashboard() {
                                     <div className="th"> Qualification</div>
                                     <div className="td">{post.education}</div>
                                 </div>
-
                                 <div className="row">
                                     <div className="th">Skill Required</div>
                                     <div className="td">{post.skills}</div>
@@ -268,14 +318,19 @@ function Userdashboard() {
                                     </div>
                                 </div>
                                 <br />
-                                <input
+
+                                <Button
                                     type="submit"
-                                    name="submit"
-                                    value="Delete"
+                                    variant="contained"
+                                    color="error"
                                     onClick={() => deletePost(post)}
-                                />
+                                >
+                                    Delete
+                                </Button>
+                                <br />
                             </div>
                         ))}
+                    <br />
                 </div>
             </div>
             <center>

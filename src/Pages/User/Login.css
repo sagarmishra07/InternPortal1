@@ -53,7 +53,7 @@
 .sign-in-form input[type="text"],
 input[type="password"] {
     font-family: "Poppins", sans-serif;
-    width: 250px;
+    width: 252px;
     height: 30px;
     size: 12px;
     background: rgba(196, 196, 196, 0.2);
@@ -64,7 +64,7 @@ input[type="password"] {
 }
 .sign-in-form button {
     font-family: "Poppins", sans-serif;
-    width: 87px;
+    width: 92px;
     height: 39px;
     color: white;
     font-weight: bolder;

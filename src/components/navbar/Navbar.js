@@ -24,19 +24,22 @@ function Navbar() {
                             <div className="navbar-list">
                                 <ul type="none">
                                     <li>
-                                        <Link to="/">Home</Link>
+                                        <Link to="/">Homepage</Link>
                                     </li>
                                     <li>
                                         <Link to="/jobs">Internships</Link>
                                     </li>
                                     <li>
-                                        <Link to="/roadmap">Roadmap</Link>
+                                        <Link to="/roadmap">Roadmaps</Link>
+                                    </li>{" "}
+                                    <li>
+                                        <Link to="/interview">Interview</Link>
                                     </li>
                                     <li>
                                         <Link to="/about">About Us</Link>
                                     </li>
                                     <li>
-                                        <Link to="/contact">Contact US</Link>
+                                        <Link to="/contact">Contact Us</Link>
                                     </li>
                                     <Link to="/dashboard">
                                         <li>Hi {users.name},</li>
@@ -60,12 +63,7 @@ function Navbar() {
                                 <li>
                                     <Link to="/">Home</Link>
                                 </li>
-                                <li>
-                                    <Link to="/jobs">Internships</Link>
-                                </li>
-                                <li>
-                                    <Link to="/roadmap">Roadmap</Link>
-                                </li>
+
                                 <li>
                                     <Link to="/about">About Us</Link>
                                 </li>
