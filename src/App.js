@@ -17,6 +17,7 @@ import Contact from "./Pages/Contact";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import InterviewQues from "./Pages/InterviewQues";
+import CodeEditor from "./Pages/CodeEditor";
 //MCQ Imports
 import axios from "axios";
 import Mcq_Home from "./Pages/mcq/Mcq_Home";
@@ -102,7 +103,6 @@ function App() {
 
                     {/* CodeEditor */}
                     <Route path="/code" component={CodeEditor} />
-
 
                     {/* MCQ PATH */}
                     <Route path="/mcq">
