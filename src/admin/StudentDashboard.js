@@ -5,13 +5,7 @@ import { logout } from "../firebase";
 import { useFirestore } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 import { isLoaded } from "react-redux-firebase";
-import TimeAgo from "javascript-time-ago";
-
-import { toast } from "react-toastify";
-import en from "javascript-time-ago/locale/en.json";
-
-import { Button } from "@material-ui/core";
-TimeAgo.addDefaultLocale(en);
+import Button from "@mui/material/Button";
 
 function AuthIsLoaded({ children }) {
     const user = useSelector((state) => state.firebase.profile);
@@ -80,17 +74,20 @@ function StudentDashboard() {
                                     Edit Profile
                                 </Link>
                             </li>
-                            <li id="list-item">
-                                <button onClick={logout}>LOGOUT</button>
-                            </li>
                         </ul>
+                        <br />
+                        <Button type="submit" color="error" onClick={logout}>
+                            Logout
+                        </Button>
                     </nav>
                 </div>
             </header>
-            <section>
-                <h1>Participate on MCQ TEST</h1>
-                <Button href="/mcq">MCQ TEST</Button>
-            </section>
+
+            <center>
+                <Button variant="contained" color="grey">
+                    <Link to="/mcq">MCQ Test</Link>
+                </Button>
+            </center>
         </>
     );
 }

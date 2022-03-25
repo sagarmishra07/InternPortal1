@@ -56,20 +56,20 @@ function UserDetail() {
 
             <div className="join-reg-container">
                 <div className="join-reg">
-                    {user &&
-                        user.map((users, index) => {
-                            return (
-                                <div key={index}>
-                                    {users.post101
-                                        .filter((val) => {
-                                            if (val.id == id) {
-                                                return val;
-                                            }
-                                        })
+                    <center>
+                        {user &&
+                            user.map((users, index) => {
+                                return (
+                                    <div key={index}>
+                                        {users.post101
+                                            .filter((val) => {
+                                                if (val.id == id) {
+                                                    return val;
+                                                }
+                                            })
 
-                                        .map((val) => (
-                                            <div>
-                                                <center>
+                                            .map((val) => (
+                                                <div>
                                                     <h1>
                                                         {val.title} <br />
                                                     </h1>
@@ -99,13 +99,8 @@ function UserDetail() {
                                                         Total Positions:
                                                         {val.total_positions}
                                                     </p>
-                                                    <p>
-                                                        Skill Required:{" "}
-                                                        {val.skills}
-                                                    </p>
-                                                    <p>
-                                                        Website: {users.website}
-                                                    </p>
+                                                    <p>Skills: {val.skills}</p>
+                                                    <p>{users.website}</p>
 
                                                     <h3>
                                                         Apply Before:{" "}
@@ -116,12 +111,12 @@ function UserDetail() {
                                                         users={users}
                                                         post={val}
                                                     />
-                                                </center>
-                                            </div>
-                                        ))}
-                                </div>
-                            );
-                        })}
+                                                </div>
+                                            ))}
+                                    </div>
+                                );
+                            })}{" "}
+                    </center>
                 </div>
             </div>
         </>

@@ -10,6 +10,13 @@ import ReactTimeAgo from "react-time-ago";
 import "../CSS/Jobs.css";
 import en from "javascript-time-ago/locale/en.json";
 import Footer from "../components/navbar/Footer";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+
+import TextField from "@mui/material/TextField";
 
 TimeAgo.addDefaultLocale(en);
 
@@ -54,33 +61,53 @@ function Jobs() {
                 <div className="column-left">
                     <div className="category-container">
                         <div>
-                            <h3>Internship Types</h3>
-                            <select
-                                name="job_type"
-                                id="job_type"
-                                onChange={(event) => {
-                                    setSearchTerm(event.target.value);
+                            <Box sx={{ minWidth: 100 }}>
+                                <FormControl fullWidth>
+                                    <InputLabel>Internship Types</InputLabel>
+                                    <Select
+                                        default="All"
+                                        name="job_type"
+                                        id="job_type"
+                                        onChange={(event) => {
+                                            setSearchTerm(event.target.value);
+                                        }}
+                                    >
+                                        <MenuItem value="all">All</MenuItem>
+                                        <MenuItem value="Frontend">
+                                            Frontend
+                                        </MenuItem>
+                                        <MenuItem value="Backend">
+                                            Backend
+                                        </MenuItem>
+                                        <MenuItem value="FullStack">
+                                            FullStack
+                                        </MenuItem>
+                                        <MenuItem value="QA">QA</MenuItem>
+                                        <MenuItem value="UI/UX">UI/UX</MenuItem>
+                                        <MenuItem value="Project Manager">
+                                            Project Manager
+                                        </MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Box>
+                            <Box
+                                component="form"
+                                sx={{
+                                    "& > :not(style)": { m: 1, width: "25ch" },
                                 }}
+                                noValidate
+                                autoComplete="off"
                             >
-                                <option value="all">All</option>
-                                <option value="Frontend">Frontend</option>
-                                <option value="Backend">Backend</option>
-                                <option value="FullStack">FullStack</option>
-                                <option value="QA">QA</option>
-                                <option value="UI/UX">UI/UX</option>
-                                <option value="Project Manager">
-                                    Project Manager
-                                </option>
-                            </select>
-                            <br />
-
-                            <input
-                                type="text"
-                                placeholder="Search..."
-                                onChange={(event) => {
-                                    setSearchTerm(event.target.value);
-                                }}
-                            />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Standard"
+                                    variant="standard"
+                                    placeholder="Search..."
+                                    onChange={(event) => {
+                                        setSearchTerm(event.target.value);
+                                    }}
+                                />
+                            </Box>
                         </div>
                     </div>
                 </div>

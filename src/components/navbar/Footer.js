@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/Group.png";
+
 import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
@@ -12,9 +13,9 @@ function Footer() {
                 <div className="footer">
                     <div className="logo">
                         <img src={logo}></img>
-                        <p>Get Your Dream Job With Intern Portal</p>
+                        <p>Get Your Dream Job With Intern Aid</p>
                         <p>014379551</p>
-                        <p>internportal@gmail.com</p>
+                        <p>internaid@gmail.com</p>
                     </div>
                     <div className="list1 ">
                         <ul type="none">
