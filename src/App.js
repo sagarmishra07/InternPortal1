@@ -17,6 +17,8 @@ import Contact from "./Pages/Contact";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
+//Interview question
+import InterviewQues from "./Pages/InterviewQues"
 //MCQ Imports
 import axios from "axios";
 import Mcq_Home from "./Pages/mcq/Mcq_Home";
@@ -93,6 +95,9 @@ function App() {
                     <Route path="/jobs" component={Jobs} />
                     <Route path="/userForm/:id?" component={EditForm} />
                     <Route path="/userEdit/:id?" component={userEdit} />
+                    {/* //Interviw Questions */}
+                    <Route path="/interview" component={InterviewQues} />
+
 
                     {/* MCQ PATH */}
                     <Route path="/mcq">

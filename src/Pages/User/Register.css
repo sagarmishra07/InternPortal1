@@ -56,10 +56,23 @@
     outline: none;
 }
 .signup-second-col input[type="text"],
-input[type="email"],
-input[type="password"] {
+input[type="email"] {
     font-family: "Poppins", sans-serif;
     width: 220px;
+    height: 30px;
+    size: 12px;
+    background: rgba(196, 196, 196, 0.2);
+    margin: 10px;
+    border: none;
+    padding: 5px 0px 5px 15px;
+    outline: none;
+    position: relative;
+    top: -13px;
+}
+.signup-second-col input[type="text"],
+input[type="password"] {
+    font-family: "Poppins", sans-serif;
+    width: 250px;
     height: 30px;
     size: 12px;
     background: rgba(196, 196, 196, 0.2);
