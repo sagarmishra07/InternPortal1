@@ -33,8 +33,11 @@ function Navbar() {
                                         <Link to="/roadmap">Roadmap</Link>
                                     </li>
                                     <li>
-                                        <Link to="/about">About Us</Link>
+                                        <Link to="/interview">Interview</Link>
                                     </li>
+                                    {/* <li>
+                                        <Link to="/about">About Us</Link>
+                                    </li> */}
                                     <li>
                                         <Link to="/contact">Contact US</Link>
                                     </li>
@@ -63,12 +66,16 @@ function Navbar() {
                                 <li>
                                     <Link to="/jobs">Internships</Link>
                                 </li>
+                                
                                 <li>
                                     <Link to="/roadmap">Roadmap</Link>
                                 </li>
                                 <li>
+                                        <Link to="/interview">Interview</Link>
+                                    </li>
+                                {/* <li>
                                     <Link to="/about">About Us</Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <Link to="/contact">Contact Us</Link>
                                 </li>
